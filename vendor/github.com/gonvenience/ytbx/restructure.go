@@ -23,7 +23,7 @@ package ytbx
 import (
 	"sort"
 
-	yamlv3 "gopkg.in/yaml.v3"
+	yamlv3 "go.yaml.in/yaml/v3"
 )
 
 // DisableRemainingKeySort disables that during restructuring of map keys, all
@@ -44,6 +44,9 @@ var knownKeyOrders = [][]string{
 	// SUSE SCF role manifest (https://github.com/SUSE/scf/blob/develop/container-host-files/etc/scf/config/role-manifest.yml)
 	{"releases", "instance_groups", "configuration", "variables"},
 	{"auth", "templates"},
+
+	// Kubernetes Object
+	{"apiVersion", "kind", "metadata", "spec", "status"},
 
 	// Universal default #1 ... name should always be first
 	{"name"},
